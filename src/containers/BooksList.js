@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Book from '../components/Book';
 
 function BooksList(props) {
-  console.log(props);
+  const { books } = props;
+  const { book } = books;
   return (
     <table className="Books-list">
       <thead>
@@ -13,15 +16,15 @@ function BooksList(props) {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{props.books.books}</td>
-          <td>Book Title</td>
-          <td>Book Category</td>
-        </tr>
+        <Book book={book} />
       </tbody>
     </table>
   );
 }
+
+BooksList.propTypes = {
+  books: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = state => ({
   books: state.books,
