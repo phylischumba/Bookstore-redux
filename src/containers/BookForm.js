@@ -1,5 +1,8 @@
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addBook } from '../actions/index';
 
 class BookForm extends Component {
   constructor(props) {
@@ -18,6 +21,8 @@ class BookForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const addNewBook = this.props;
+    addNewBook.submitNewBook(this.state);
   }
 
   render() {
@@ -55,4 +60,14 @@ class BookForm extends Component {
   }
 }
 
-export default BookForm;
+const mapDispatchToProps = dispatch => ({
+  submitNewBook: newBook => {
+    dispatch(addBook(newBook));
+  },
+});
+
+BookForm.propTypes = {
+  submitNewBook: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(BookForm);

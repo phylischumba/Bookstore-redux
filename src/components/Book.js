@@ -4,15 +4,18 @@ import PropTypes from 'prop-types';
 function Book({ book }) {
   return (
     <tr>
-      <td>{book}</td>
-      <td>Book Title</td>
-      <td>Book Category</td>
+      <td>{ book.title}</td>
+      <td>{book.category}</td>
     </tr>
   );
 }
 
 Book.propTypes = {
-  book: PropTypes.string.isRequired,
+  book: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+
 };
 
 export default Book;
