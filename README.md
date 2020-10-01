@@ -1,68 +1,114 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Contributors][contributors-shield]][contributors-url][![Forks][forks-shield]][forks-url][![Stargazers][stars-shield]][stars-url][![Issues][issues-shield]][issues-url]
+[![hire-badge](https://img.shields.io/badge/Consult%20/%20Hire%20Ikraam-Click%20to%20Contact-brightgreen)](mailto:consult.ikraam@gmail.com) [![Twitter Follow](https://img.shields.io/twitter/follow/GhoorIkraam?label=Follow%20Ikraam%20on%20Twitter&style=social)](https://twitter.com/GhoorIkraam)
+[![hire-badge](https://img.shields.io/badge/Consult%20/%20Hire%20Phylis-Click%20to%20Contact-brightgreen)](mailto:chumba.phyl@gmail.com) [![Twitter Follow](https://img.shields.io/twitter/follow/phyl_chumba?label=Follow%20Phylis%20on%20Twitter&style=social)](https://twitter.com/phyl_chumba)
 
-## Available Scripts
+<!-- PROJECT LOGO -->
 
-In the project directory, you can run:
+<br />
+<p align="center">
+  <a href="git@github.com:Phylis05/Bookstore-redux.git">
+    <p align="center"> <img src="" alt="bookstore" height="200"> </p>
+  </a>
 
-### `yarn start`
+  <h3 align="center">A Bookstore CMS built in React and Redux</h3>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <p align="center">
+    <a href="https://github.com/Phylis05/Bookstore-redux/issues">Report a Bug or Request a Feature</a>
+    ·
+    <a href="https://bookstore-ip.herokuapp.com/">Live Demo</a>
+  </p>
+</p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<!-- Live Link  -->
 
-### `yarn test`
+## [Live Demo](https://bookstore-ip.herokuapp.com/)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
+<!-- ABOUT THE PROJECT -->
 
-### `yarn build`
+## About The Project
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This Bookstore is a CMS system that is built in React and Redux.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<!-- CONTROL'S -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to use
 
-### `yarn eject`
+<!-- INSTALLATION -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run the bookstore locally, clone the repository and navigate to it's directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+git@github.com:Phylis05/Bookstore-redux.git
+cd Bookstore-redux
+git checkout initialize-react-repo
+npm install
+npm run start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Now go to [localhost:3000](http://localhost:8000) in your browser.
 
-## Learn More
+### Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Jest is used to test:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run test
+```
 
-### Code Splitting
+<!-- BUILD WITH -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Built With
 
-### Analyzing the Bundle Size
+- React.js
+- Webpack
+- Eslint
+- Stylelint
+- Jest
+- NPM
+- Babel
+- Heroku for deployment
+- Redux
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Potential Updates
 
-### Making a Progressive Web App
+<!-- CONTACT -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Authors
 
-### Advanced Configuration
+👤 **Ikraam Ghoor**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Github: [@ikraamg](https://github.com/ikraamg)
+- Twitter: [@GhoorIkraam](https://twitter.com/GhoorIkraam)
+- LinkedIn: [isghoor](https://linkedin.com/isghoor)
+- Email: [consult.ikraam@gmail.com](mailto:consult.ikraam@gmail.com)
 
-### Deployment
+👤 **Phylis Chepchumba**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Github: [Phylis05](https://github.com/phylis05)
+- Linkedin: [Phylis Chepchumba](https://linkedin.com/phylis-chepchumba)
+- Twitter: [phylis_chumbaa](https://twitter.com/phyl_chumba)
 
-### `yarn build` fails to minify
+## Show your support
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/Phylis05/Bookstore-redux.svg?style=flat-square
+[contributors-url]: https://github.com/Phylis05/Bookstore-redux/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Phylis05/Bookstore-redux.svg?style=flat-square
+[forks-url]: https://github.com/Phylis05/Bookstore-redux/network/members
+[stars-shield]: https://img.shields.io/github/stars/Phylis05/Bookstore-redux.svg?style=flat-square
+[stars-url]: https://github.com/Phylis05/Bookstore-redux/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Phylis05/Bookstore-redux.svg?style=flat-square
+[issues-url]: https://github.com/Phylis05/Bookstore-redux/issues
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
