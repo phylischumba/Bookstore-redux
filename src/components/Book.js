@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './book.css';
@@ -9,7 +10,9 @@ function Book({ book, deleteBook }) {
         <td className="book-category">{ book.category }</td>
         <td className="book-title">{ book.title }</td>
         <td className="delete-button">
+          <a href="#">Comments</a>
           <button type="button" onClick={() => deleteBook(book)}>Remove Book</button>
+          <a href="#">Edit</a>
         </td>
       </tr>
       <div className="progress">
