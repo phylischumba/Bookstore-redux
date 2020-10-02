@@ -8,6 +8,7 @@ class BookForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: null,
       title: '',
       category: 'Action',
     };
@@ -16,6 +17,8 @@ class BookForm extends Component {
   }
 
   handleChange = e => {
+    const { booksLength } = this.props;
+    this.setState({ id: booksLength });
     this.setState({ [e.target.id]: e.target.value });
   }
 
@@ -23,6 +26,7 @@ class BookForm extends Component {
     e.preventDefault();
     const { submitNewBook } = this.props;
     submitNewBook(this.state);
+    e.target.reset();
   }
 
   render() {
@@ -42,7 +46,7 @@ class BookForm extends Component {
         <div className="input-field">
           <label htmlFor="title">
             Title
-            <input type="text" id="title" onChange={this.handleChange} />
+            <input required type="text" id="title" onChange={this.handleChange} />
           </label>
         </div>
 
@@ -61,6 +65,10 @@ class BookForm extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  booksLength: state.books.length,
+});
+
 const mapDispatchToProps = dispatch => ({
   submitNewBook: newBook => {
     dispatch(addBook(newBook));
@@ -69,6 +77,8 @@ const mapDispatchToProps = dispatch => ({
 
 BookForm.propTypes = {
   submitNewBook: PropTypes.func.isRequired,
+  booksLength: PropTypes.number.isRequired,
+
 };
 
-export default connect(null, mapDispatchToProps)(BookForm);
+export default connect(mapStateToProps, mapDispatchToProps)(BookForm);

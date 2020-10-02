@@ -7,13 +7,14 @@ function BooksList({ books }) {
   const bookList = books.map(book => (
     <Book
       book={book}
-      key={`${book}${Math.random()}`}
+      key={book.id}
     />
   ));
   return (
     <table className="Books-list">
       <thead>
         <tr>
+          <th>Book ID</th>
           <th>Book Title</th>
           <th>Book Category</th>
         </tr>
@@ -29,6 +30,7 @@ BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string,
     category: PropTypes.string,
+    id: PropTypes.number,
   })).isRequired,
 };
 
