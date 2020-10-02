@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addBook } from '../actions/index';
 import categoryOptions from './constants';
+import './bookForm.css';
 
 class BookForm extends Component {
   constructor(props) {
@@ -46,25 +47,21 @@ class BookForm extends Component {
     ));
     return (
       <form onSubmit={this.handleSubmit}>
-        <h5>Create Book</h5>
+        <h5 className="add-book">Add New Book</h5>
 
-        <div className="input-field">
-          <label htmlFor="title">
-            Title
-            <input required type="text" id="title" onChange={this.handleChange} />
-          </label>
-        </div>
+        <div className="form-body">
+          <div className="input-field">
+            <input required type="text" id="title" onChange={this.handleChange} placeholder="Book Title" />
+          </div>
 
-        <div className="input-field">
-          <label htmlFor="category">
-            Category
+          <div className="input-field">
             <select id="category" value={defaultCategory} onChange={this.handleChange}>
               {options}
             </select>
-          </label>
-        </div>
+          </div>
 
-        <button type="submit">Create Book</button>
+          <button type="submit">Create Book</button>
+        </div>
       </form>
     );
   }

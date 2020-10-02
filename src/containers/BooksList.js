@@ -25,14 +25,6 @@ function BooksList({
     <div>
       <CategoryFilter category={category} handleCategory={handleCategory} />
       <table className="Books-list">
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Book Title</th>
-            <th>Book Category</th>
-            <th>Remove Book</th>
-          </tr>
-        </thead>
         <tbody>
           {bookList}
         </tbody>
