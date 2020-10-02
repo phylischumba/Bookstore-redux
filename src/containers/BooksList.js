@@ -5,13 +5,15 @@ import Book from '../components/Book';
 import { removeBook } from '../actions/index';
 
 function BooksList({ books, deleteBook }) {
+  const handleRemoveBook = book => deleteBook(book);
   const bookList = books.map(book => (
     <Book
-      deleteBook={deleteBook}
+      deleteBook={handleRemoveBook}
       book={book}
       key={book.id}
     />
   ));
+
   return (
     <table className="Books-list">
       <thead>
