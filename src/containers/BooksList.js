@@ -11,11 +11,12 @@ function BooksList({
   const handleCategory = e => {
     newCategory(e.target.value === 'ALL' ? '' : e.target.value);
   };
+  const handleRemoveBook = book => deleteBook(book);
 
   const filteredBooks = category === '' ? books : books.filter(book => book.category === category);
   const bookList = filteredBooks.map(book => (
     <Book
-      deleteBook={deleteBook}
+      deleteBook={handleRemoveBook}
       book={book}
       key={book.id}
     />
