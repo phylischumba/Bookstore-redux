@@ -1,4 +1,5 @@
 .add-book {
+  margin-left: 24px;
   width: 174px;
   height: 24px;
   font-family: Montserrat, sans-serif;
@@ -37,5 +38,5 @@ button {
 
 .form-body {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }

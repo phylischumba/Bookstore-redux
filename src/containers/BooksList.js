@@ -24,11 +24,11 @@ function BooksList({
   return (
     <div>
       <CategoryFilter category={category} handleCategory={handleCategory} />
-      <table className="Books-list">
-        <tbody>
+      <div className="Books-list">
+        <div>
           {bookList}
-        </tbody>
-      </table>
+        </div>
+      </div>
     </div>
   );
 }

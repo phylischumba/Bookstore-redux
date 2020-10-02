@@ -26,6 +26,7 @@ function CategoryFilter({ category, handleCategory }) {
           </select>
         </label>
       </div>
+      <img alt="user-icon" className="oval" src="https://img.icons8.com/ios-glyphs/90/000000/change-user-male.png" />
     </nav>
 
   );

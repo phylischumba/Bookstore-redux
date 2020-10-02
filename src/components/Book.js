@@ -6,15 +6,15 @@ import './book.css';
 function Book({ book, deleteBook }) {
   return (
     <div className="display-row">
-      <tr className="book-row">
-        <td className="book-category">{ book.category }</td>
-        <td className="book-title">{ book.title }</td>
-        <td className="delete-button">
+      <div className="book-row">
+        <div className="book-category">{ book.category }</div>
+        <div className="book-title">{ book.title }</div>
+        <div className="delete-button">
           <a href="#">Comments</a>
-          <button type="button" onClick={() => deleteBook(book)}>Remove Book</button>
+          <button type="button" onClick={() => deleteBook(book)}>Remove</button>
           <a href="#">Edit</a>
-        </td>
-      </tr>
+        </div>
+      </div>
       <div className="progress">
         <div className="columns-display">
           <svg>
