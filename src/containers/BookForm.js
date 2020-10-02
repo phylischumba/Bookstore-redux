@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addBook } from '../actions/index';
+import categoryOptions from './constants';
 
 class BookForm extends Component {
   constructor(props) {
@@ -12,8 +13,6 @@ class BookForm extends Component {
       title: '',
       category: 'Action',
     };
-
-    this.categoryOptions = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
   }
 
   handleChange = e => {
@@ -37,7 +36,7 @@ class BookForm extends Component {
 
   render() {
     const { defaultCategory } = this.state;
-    const options = this.categoryOptions.map(category => (
+    const options = categoryOptions.map(category => (
       <option
         value={category}
         key={category}
