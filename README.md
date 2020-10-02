@@ -7,7 +7,7 @@
 <br />
 <p align="center">
   <a href="git@github.com:Phylis05/Bookstore-redux.git">
-    <p align="center"> <img src="" alt="bookstore" height="200"> </p>
+    <p align="center"> <img src="https://user-images.githubusercontent.com/34813339/94949548-62ff8e00-04e1-11eb-9674-fcf9e8d1d703.png" alt="bookstore" height="500"> </p>
   </a>
 
   <h3 align="center">A Bookstore CMS built in React and Redux</h3>
