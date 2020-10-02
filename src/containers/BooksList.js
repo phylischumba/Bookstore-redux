@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
-function BooksList(props) {
-  const { books } = props;
-  const bookList = books.map(book => (<Book book={book} key={Math.random()} />));
+function BooksList({ books }) {
+  const bookList = books.map(book => (
+    <Book
+      book={book}
+      key={`${book}${Math.random()}`}
+    />
+  ));
   return (
     <table className="Books-list">
       <thead>

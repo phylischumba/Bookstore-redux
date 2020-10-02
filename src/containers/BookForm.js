@@ -21,8 +21,8 @@ class BookForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const addNewBook = this.props;
-    addNewBook.submitNewBook(this.state);
+    const { submitNewBook } = this.props;
+    submitNewBook(this.state);
   }
 
   render() {
@@ -38,22 +38,23 @@ class BookForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <h5>Create Book</h5>
+
         <div className="input-field">
           <label htmlFor="title">
             Title
             <input type="text" id="title" onChange={this.handleChange} />
           </label>
         </div>
+
         <div className="input-field">
           <label htmlFor="category">
             Category
             <select id="category" value={defaultCategory} onChange={this.handleChange}>
               {options}
             </select>
-
           </label>
-
         </div>
+
         <button type="submit">Create Book</button>
       </form>
     );

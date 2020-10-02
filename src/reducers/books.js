@@ -1,4 +1,4 @@
-const initialState = [{ title: 'React', category: 'software' }];
+import initialState from './initialState';
 
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {

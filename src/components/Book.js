@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 function Book({ book }) {
   return (
     <tr>
-      <td>{ book.title}</td>
-      <td>{book.category}</td>
+      <td>{ book.title }</td>
+      <td>{ book.category }</td>
     </tr>
   );
 }
