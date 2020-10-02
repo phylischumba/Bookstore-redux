@@ -9,11 +9,11 @@ function BooksList({
   books, deleteBook, newCategory, category,
 }) {
   const handleCategory = e => {
-    newCategory(e.target.value === 'ALL' ? '' : e.target.value);
+    newCategory(e.target.value);
   };
   const handleRemoveBook = book => deleteBook(book);
 
-  const filteredBooks = category === '' ? books : books.filter(book => book.category === category);
+  const filteredBooks = category === 'All' ? books : books.filter(book => book.category === category);
   const bookList = filteredBooks.map(book => (
     <Book
       deleteBook={handleRemoveBook}

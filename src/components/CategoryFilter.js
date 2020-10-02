@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import categoryOptions from '../containers/constants';
 
 function CategoryFilter({ category, handleCategory }) {
-  const newCategoryOptions = (['ALL']).concat(categoryOptions);
+  const newCategoryOptions = (['All']).concat(categoryOptions);
   const options = newCategoryOptions.map(cat => (
     <option
       value={cat}
