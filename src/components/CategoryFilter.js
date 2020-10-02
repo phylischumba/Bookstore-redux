@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import categoryOptions from './constants';
+import categoryOptions from '../containers/constants';
 
-function CategoryFilter({ category, handleFilterCategory }) {
+function CategoryFilter({ category, handleCategory }) {
   const newCategoryOptions = (['ALL']).concat(categoryOptions);
-  const options = newCategoryOptions.map(categoryItem => (
+  const options = newCategoryOptions.map(cat => (
     <option
-      value={categoryItem}
-      key={categoryItem}
+      value={cat}
+      key={cat}
     >
-      {categoryItem}
+      {cat}
     </option>
   ));
 
@@ -17,7 +17,7 @@ function CategoryFilter({ category, handleFilterCategory }) {
     <div className="input-field">
       <label htmlFor="category">
         Category
-        <select id="category" value={category} onChange={handleFilterCategory}>
+        <select id="category" value={category} onChange={handleCategory}>
           {options}
         </select>
       </label>
@@ -28,7 +28,7 @@ function CategoryFilter({ category, handleFilterCategory }) {
 
 CategoryFilter.propTypes = {
   category: PropTypes.string.isRequired,
-  handleFilterCategory: PropTypes.func.isRequired,
+  handleCategory: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;

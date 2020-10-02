@@ -2,17 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import CategoryFilter from './CategoryFilter';
+import CategoryFilter from '../components/CategoryFilter';
 import { removeBook, changeFilter } from '../actions/index';
 
 function BooksList({
   books, deleteBook, newCategory, category,
 }) {
-  const handleFilterCategory = e => {
-    newCategory(e.target.value);
+  const handleCategory = e => {
+    newCategory(e.target.value === 'ALL' ? '' : e.target.value);
   };
 
-  const filteredBooks = books.filter(book => book.category === 'Sci-Fi');
+  const filteredBooks = category === '' ? books : books.filter(book => book.category === category);
   const bookList = filteredBooks.map(book => (
     <Book
       deleteBook={deleteBook}
@@ -23,7 +23,7 @@ function BooksList({
 
   return (
     <div>
-      <CategoryFilter category={category} handleFilterCategory={handleFilterCategory} />
+      <CategoryFilter category={category} handleCategory={handleCategory} />
       <table className="Books-list">
         <thead>
           <tr>

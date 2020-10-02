@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -27,8 +26,9 @@ class BookForm extends Component {
     submitNewBook(this.state);
     e.target.reset();
 
+    const { booksLength } = this.props;
     this.setState({
-      id: null,
+      id: booksLength + 1,
       title: '',
       category: 'Action',
     });
