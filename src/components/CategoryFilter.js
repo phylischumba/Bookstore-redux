@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import categoryOptions from '../containers/constants';
+import './categoryFilter.css';
 
 function CategoryFilter({ category, handleCategory }) {
   const newCategoryOptions = (['All']).concat(categoryOptions);
@@ -14,14 +15,19 @@ function CategoryFilter({ category, handleCategory }) {
   ));
 
   return (
-    <div className="input-field">
-      <label htmlFor="category">
-        Category
-        <select id="category" value={category} onChange={handleCategory}>
-          {options}
-        </select>
-      </label>
-    </div>
+    <nav>
+      <h1>BOOK STORE CMS</h1>
+      <h3>BOOKS</h3>
+      <div className="input-field">
+        <label htmlFor="category">
+          CATEGORY
+          <select id="category" value={category} onChange={handleCategory}>
+            {options}
+          </select>
+        </label>
+      </div>
+      <img alt="user-icon" className="oval" src="https://img.icons8.com/ios-glyphs/90/000000/change-user-male.png" />
+    </nav>
 
   );
 }

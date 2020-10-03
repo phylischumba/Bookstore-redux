@@ -1,0 +1,43 @@
+nav {
+  display: flex;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* width: 70%; */
+}
+
+nav h1 {
+  font-size: 28px;
+  color: #0290ff;
+  margin: 0 20px;
+}
+
+h3 {
+  margin: 0 20px;
+}
+
+nav #category {
+  height: 30px;
+  margin: 0 20px;
+}
+
+nav label {
+  font-weight: bold;
+  font-size: large;
+}
+
+.input-field {
+  height: 25px;
+}
+
+.input-field #category {
+  margin-left: 10px;
+}
+
+.oval {
+  margin-left: auto;
+  width: 45px;
+  height: 45px;
+  border: solid 1px #e8e8e8;
+}

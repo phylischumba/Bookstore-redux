@@ -1,0 +1,142 @@
+tbody {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  font-family: RobotoSlab, sans-serif;
+}
+
+.book-row {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+.display-row {
+  display: flex;
+  width: 1200px;
+  height: 170px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  padding: 2em 0 0 2em;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+svg {
+  width: 6.8em;
+}
+
+svg circle {
+  fill: none;
+  stroke-width: 5;
+  stroke: #000;
+  transform: translate(5px, 5px) rotate(-90deg);
+  stroke-dasharray: 214;
+  stroke-dashoffset: 214;
+  transform-origin: 50% 50%;
+}
+
+svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #f3f3f3;
+}
+
+svg circle:nth-child(2) {
+  stroke-dashoffset: calc(214 - (214 * 64) / 100);
+  stroke: #0290ff;
+}
+
+.columns-display {
+  display: flex;
+}
+
+.progress-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+.book-category {
+  width: 49px;
+  height: 18px;
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.book-title {
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+  text-align: left;
+}
+
+.delete-button {
+  margin-top: 3em;
+}
+
+a {
+  text-decoration: none;
+  color: #0290ff;
+  margin-right: 1em;
+}
+
+.delete-button button {
+  width: auto;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+  border: none;
+  background-color: #fff;
+  justify-self: start;
+  padding: 0;
+  margin-right: 1em;
+}
+
+.percent {
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.completed {
+  width: 80px;
+  height: 18px;
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.update-btn {
+  background-color: #0290ff;
+  color: #fafafa;
+}

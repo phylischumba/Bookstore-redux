@@ -25,19 +25,11 @@ function BooksList({
   return (
     <div>
       <CategoryFilter category={category} handleCategory={handleCategory} />
-      <table className="Books-list">
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Book Title</th>
-            <th>Book Category</th>
-            <th>Remove Book</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className="Books-list">
+        <div>
           {bookList}
-        </tbody>
-      </table>
+        </div>
+      </div>
     </div>
   );
 }

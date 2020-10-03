@@ -1,0 +1,42 @@
+.add-book {
+  margin-left: 24px;
+  width: 174px;
+  height: 24px;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+#title {
+  width: 664px;
+  height: 45px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+#category {
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 var(--black-5);
+  background-color: #fafafa;
+  width: 200px;
+  height: 49px;
+}
+
+button {
+  width: 184px;
+  height: 45px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  color: #fafafa;
+}
+
+.form-body {
+  display: flex;
+  justify-content: space-around;
+}
