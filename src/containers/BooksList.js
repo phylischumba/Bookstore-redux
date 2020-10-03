@@ -2,11 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { removeBook } from '../actions/index';
+import CategoryFilter from '../components/CategoryFilter';
+import { removeBook, changeFilter } from '../actions/index';
 
-function BooksList({ books, deleteBook }) {
+function BooksList({
+  books, deleteBook, newCategory, category,
+}) {
+  const handleCategory = e => {
+    newCategory(e.target.value);
+  };
   const handleRemoveBook = book => deleteBook(book);
-  const bookList = books.map(book => (
+
+  const filteredBooks = category === 'All' ? books : books.filter(book => book.category === category);
+  const bookList = filteredBooks.map(book => (
     <Book
       deleteBook={handleRemoveBook}
       book={book}
@@ -15,21 +23,38 @@ function BooksList({ books, deleteBook }) {
   ));
 
   return (
-    <table className="Books-list">
-      <thead>
-        <tr>
-          <th>Book ID</th>
-          <th>Book Title</th>
-          <th>Book Category</th>
-          <th>Remove Book</th>
-        </tr>
-      </thead>
-      <tbody>
-        {bookList}
-      </tbody>
-    </table>
+    <div>
+      <CategoryFilter category={category} handleCategory={handleCategory} />
+      <table className="Books-list">
+        <thead>
+          <tr>
+            <th>Book ID</th>
+            <th>Book Title</th>
+            <th>Book Category</th>
+            <th>Remove Book</th>
+          </tr>
+        </thead>
+        <tbody>
+          {bookList}
+        </tbody>
+      </table>
+    </div>
   );
 }
+
+const mapStateToProps = state => ({
+  books: state.books,
+  category: state.category,
+});
+
+const mapDispatchToProps = dispatch => ({
+  deleteBook: book => {
+    dispatch(removeBook(book));
+  },
+  newCategory: book => {
+    dispatch(changeFilter(book));
+  },
+});
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
@@ -38,16 +63,8 @@ BooksList.propTypes = {
     id: PropTypes.number,
   })).isRequired,
   deleteBook: PropTypes.func.isRequired,
+  newCategory: PropTypes.func.isRequired,
+  category: PropTypes.string.isRequired,
 };
-
-const mapStateToProps = state => ({
-  books: state.books,
-});
-
-const mapDispatchToProps = dispatch => ({
-  deleteBook: book => {
-    dispatch(removeBook(book));
-  },
-});
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

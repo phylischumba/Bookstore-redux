@@ -1,6 +1,6 @@
-import initialState from './initialState';
+import initialBookState from './initialState';
 
-const bookReducer = (state = initialState, action) => {
+const bookReducer = (state = initialBookState, action) => {
   switch (action.type) {
     case 'CREATE_BOOK':
       return [
