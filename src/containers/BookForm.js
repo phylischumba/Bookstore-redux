@@ -27,6 +27,12 @@ class BookForm extends Component {
     const { submitNewBook } = this.props;
     submitNewBook(this.state);
     e.target.reset();
+
+    this.setState({
+      id: null,
+      title: '',
+      category: 'Action',
+    });
   }
 
   render() {
