@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -9,30 +10,40 @@ class BookForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
       title: '',
       category: 'Action',
+      author: 'placeholder',
+      percentage: 44,
     };
   }
 
   handleChange = e => {
-    const { booksLength } = this.props;
-    this.setState({ id: booksLength });
     this.setState({ [e.target.id]: e.target.value });
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    const { submitNewBook } = this.props;
-    submitNewBook(this.state);
+    this.formSubmit(e.target);
     e.target.reset();
 
-    const { booksLength } = this.props;
     this.setState({
-      id: booksLength + 1,
       title: '',
       category: 'Action',
     });
+  }
+
+  async formSubmit(formData) {
+    const { submitNewBook } = this.props;
+    const data = new FormData(formData);
+    await fetch('http://localhost:3000/api/v1/books', {
+      method: 'POST',
+      mode: 'cors',
+      // 'Content-Type': 'application/json',
+      // Accept: 'application/json',
+      body: data,
+    })
+      .then(response => response.json())
+      .then(r => submitNewBook(r));
   }
 
   render() {
@@ -51,11 +62,17 @@ class BookForm extends Component {
 
         <div className="form-body">
           <div className="input-field">
-            <input required type="text" id="title" onChange={this.handleChange} placeholder="Book Title" />
+            <input name="book[title]" required type="text" id="title" onChange={this.handleChange} placeholder="Book Title" />
+          </div>
+          <div className="input-field">
+            <input name="book[percentage]" required type="number" id="percentage" onChange={this.handleChange} placeholder="%" />
+          </div>
+          <div className="input-field">
+            <input name="book[author]" required type="text" id="author" onChange={this.handleChange} placeholder="Author" />
           </div>
 
           <div className="input-field">
-            <select id="category" value={defaultCategory} onChange={this.handleChange}>
+            <select name="book[category]" id="category" value={defaultCategory} onChange={this.handleChange}>
               {options}
             </select>
           </div>
@@ -67,10 +84,6 @@ class BookForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  booksLength: state.books.length,
-});
-
 const mapDispatchToProps = dispatch => ({
   submitNewBook: newBook => {
     dispatch(addBook(newBook));
@@ -79,8 +92,6 @@ const mapDispatchToProps = dispatch => ({
 
 BookForm.propTypes = {
   submitNewBook: PropTypes.func.isRequired,
-  booksLength: PropTypes.number.isRequired,
-
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookForm);
+export default connect(null, mapDispatchToProps)(BookForm);

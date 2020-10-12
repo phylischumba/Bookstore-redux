@@ -1,6 +1,4 @@
-import initialBookState from './initialState';
-
-const bookReducer = (state = initialBookState, action) => {
+const bookReducer = (state = [], action) => {
   switch (action.type) {
     case 'CREATE_BOOK':
       return [
@@ -9,6 +7,8 @@ const bookReducer = (state = initialBookState, action) => {
       ];
     case 'REMOVE_BOOK':
       return state.filter(book => book.id !== action.book.id);
+    case 'LOAD_BOOKS':
+      return [...action.books];
     default:
       return state;
   }

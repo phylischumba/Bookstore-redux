@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './App.css';
 import BooksList from '../containers/BooksList';
 import BookForm from '../containers/BookForm';
@@ -6,8 +6,10 @@ import BookForm from '../containers/BookForm';
 function App() {
   return (
     <div className="App">
-      <BooksList />
-      <BookForm />
+      <Suspense fallback={<div>Loading...</div>}>
+        <BooksList />
+        <BookForm />
+      </Suspense>
     </div>
   );
 }

@@ -9,6 +9,11 @@ function Book({ book, deleteBook }) {
       <div className="book-row">
         <div className="book-category">{ book.category }</div>
         <div className="book-title">{ book.title }</div>
+        <div className="book-category">
+          Author:
+          {' '}
+          {book.author}
+        </div>
         <div className="delete-button">
           <a href="#">Comments</a>
           <button type="button" onClick={() => deleteBook(book)}>Remove</button>
@@ -22,7 +27,10 @@ function Book({ book, deleteBook }) {
             <circle cx="70" cy="70" r="34" />
           </svg>
           <div className="progress-content">
-            <span className="percent">64%</span>
+            <span className="percent">
+              {book.percentage}
+              %
+            </span>
             <span className="completed">Completed</span>
           </div>
         </div>
@@ -40,7 +48,10 @@ Book.propTypes = {
   book: PropTypes.shape({
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
+    percentage: PropTypes.number.isRequired,
+
   }).isRequired,
   deleteBook: PropTypes.func.isRequired,
 
