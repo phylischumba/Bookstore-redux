@@ -47,7 +47,7 @@ svg circle:nth-child(1) {
 }
 
 svg circle:nth-child(2) {
-  stroke-dashoffset: calc(214 - (214 * 64) / 100);
+  stroke-dashoffset: calc(214 - (214 * 50) / 100);
   stroke: #0290ff;
 }
 
